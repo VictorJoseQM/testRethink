@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1733835803241",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "senha": "1213123"
+  },
+  {
+    "id": "1733835826595",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "senha": "1213123"
+  },
+  {
+    "id": "1733835965343",
+    "name": "John Doe",
+    "email": "johndoe@example.com",
+    "senha": "1213123"
+  },
+  {
+    "id": "1",
+    "nome": "Pedro",
+    "email": "Teste@gmail.com",
+    "senha": "1213123"
+  },
+  {
+    "id": "3",
+    "name": "Pessdroasdsssss",
+    "email": "Teste",
+    "senha": "1235"
+  }
+]

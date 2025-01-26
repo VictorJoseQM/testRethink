@@ -1,0 +1,84 @@
+@baseUrl = http://localhost:3000
+
+#Cadastro de usuário
+###a
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "sobrenome": "da Silva",
+  "tipoIdentificacao": 1,
+  "valorIdentificacao": 1,
+  "email": "joao.silva@example.com",
+  "senha": "senhaSegura123",
+  "tipoUsuario": "admin",
+  "telefone": "11999999999"
+}
+
+
+#a
+###Cadastro de maker
+POST {{baseUrl}}/makers
+Content-Type: application/json
+
+{
+  "nomeApresentacao": "Rethink3d", 
+  "descricao": "Especialista em design e fabricação de móveis.", 
+  "categorias": "aa",
+  "tipomaker": 1,
+  "idusuario": 1
+}
+
+#POST
+###Post de produto
+POST {{baseUrl}}/produtos
+Content-Type: application/json
+
+{
+  "nome": "Cadeira de Escritório Ergonômica",
+  "descricao": "Cadeira ergonômica com apoio lombar ajustável, ideal para longas horas de trabalho.",
+  "dimensoes": "120x60x50 cm",
+  "altura": 120,
+  "largura": 60,
+  "peso": 12,
+  "categoria": "Móveis para Escritório",
+  "imagens": [
+    "https://example.com/imagens/cadeira1.jpg",
+    "https://example.com/imagens/cadeira2.jpg"
+  ],
+  "preco": 799,
+  "tempoEstimado": "5 dias úteis",
+  "idmaker": 1
+}
+
+
+# /produtos/:IdProduct
+### Get de imagens do Product
+GET {{baseUrl}}/produtos/8
+
+# imagens/produtos/:IdProduct/:Filename
+###Ver foto especifica
+GET {{baseUrl}}imagens/produtos/8/0.jpg
+
+
+# produtos/upload-pictures/:id
+### Imagens do produto
+POST {{baseUrl}}/produtos/upload-pictures/8
+Content-Type: multipart/form-data; boundary=----BoundaryDelimitadorHttp
+
+------BoundaryDelimitadorHttp
+Content-Disposition: form-data; name="file"; filename="lookthisdud2.jpg"
+Content-Type: image/jpg
+
+< ./dev/images/lookthisdud2.jpg
+
+------BoundaryDelimitadorHttp
+Content-Disposition: form-data; name="file"; filename="lookthisdude.jpg"
+Content-Type: image/jpg
+
+< ./dev/images/lookthisdude.jpg
+------BoundaryDelimitadorHttp--
+
+
+
